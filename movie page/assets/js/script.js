@@ -1,24 +1,28 @@
 boxButton = document.querySelector("#boxButton");
+shine = document.querySelector("#shine");
 marioOut = document.querySelector(".marioOut");
 bullet = document.querySelector(".bullet");
-footer = document.querySelector("footer");
 main = document.querySelector("main");
+escurecer = document.querySelector(".escurecer");
+sinopse = document.querySelector(".sinopse");
+date = document.querySelector(".date");
 
-function fly() {
+shine.addEventListener("click", () => {
   boxButton.style.animation = "fly 2s ease-in-out";
-}
-
-boxButton.addEventListener("click", () => {
-  boxButton.style.animation = "fly 2s ease-in-out";
+  shine.style.animation = "opacity 2s";
+  sinopse.style.animation = "flyLeft 2s ease-in-out";
+  date.style.animation = "flyRight 2s ease-in-out";
   marioOut.style.animation = "opacity 2s";
   bullet.style.animation = "opacity 2s";
-  footer.style.animation = "opacity 2s";
+  escurecer.style.animation = "escurecer 2s";
 
   setTimeout(() => {
     boxButton.style.display = "none";
     marioOut.style.display = "none";
     bullet.style.display = "none";
-    footer.style.display = "none";
+    escurecer.style.opacity = "0.5";
+    date.style.display = "none";
+    sinopse.style.display = "none";
 
     main.innerHTML += `<iframe
     class="trailer"

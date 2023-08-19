@@ -13,10 +13,40 @@
 body {
   background-image: url(./images/mario\ background.jpg);
   background-position: center center;
+  background-color: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   overflow: hidden;
+}
+
+.date,
+.sinopse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  width: 300px;
+  border: #ff8d0a 5px solid;
+  background-color: rgba(61, 54, 54, 0.904);
+  color: #ffffff;
+  position: absolute;
+  top: 20%;
+  border-radius: 30px;
+  opacity: 0.9;
+  padding: 20px;
+  font-family: "Oswald", sans-serif;
+  box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.8), 0px 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.sinopse {
+  left: 10%;
+  font-size: x-large;
+}
+
+.date {
+  right: 10%;
+  font-size: xx-large;
 }
 
 .box {
@@ -40,6 +70,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: -1;
 }
 
 .bullet {
@@ -47,15 +78,27 @@ body {
   bottom: 70px;
   right: 10px;
   width: 50px;
-  animation: move 4s infinite;
+  animation: move 4s linear infinite;
   z-index: 3;
 }
 
-#boxButton {
+#boxButton,
+#shine {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100px;
+}
+
+#shine {
+  animation: spin 2s infinite linear;
+}
+
+.escurecer {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0;
 }
 
 .trailer {
@@ -65,21 +108,17 @@ body {
   left: 20%;
   overflow: hidden;
   position: absolute;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
 @keyframes bounce {
   0%,
   100% {
-    transform: translateY(-20px);
+    transform: translateY(-40px);
   }
   50% {
-    transform: translateY(-40px);
+    transform: translateY(-20px);
   }
 }
 
@@ -88,7 +127,7 @@ footer {
     transform: translateX(150px);
   }
   100% {
-    transform: translateX(-1000px);
+    transform: translateX(-2000px);
   }
 }
 
@@ -104,11 +143,47 @@ footer {
   }
 }
 
+@keyframes flyLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-600px);
+  }
+}
+
+@keyframes flyRight {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateX(600px);
+  }
+}
+
 @keyframes opacity {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes escurecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(359deg);
   }
 }
