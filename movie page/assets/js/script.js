@@ -6,10 +6,12 @@ main = document.querySelector("main");
 escurecer = document.querySelector(".escurecer");
 sinopse = document.querySelector(".sinopse");
 date = document.querySelector(".date");
+boxSign = document.querySelector(".box-sign");
 
 shine.addEventListener("click", () => {
   boxButton.style.animation = "fly 2s ease-in-out";
   shine.style.animation = "opacity 2s";
+  boxSign.style.animation = "opacity 2s";
   sinopse.style.animation = "flyLeft 2s ease-in-out";
   date.style.animation = "flyRight 2s ease-in-out";
   marioOut.style.animation = "opacity 2s";
