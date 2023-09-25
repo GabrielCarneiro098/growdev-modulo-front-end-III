@@ -122,3 +122,21 @@
     opacity: 0.8;
   }
 }
+
+footer span {
+  opacity: 0.5;
+  transition: 0.2s;
+  font-weight: bolder;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+span:hover,
+footer a:hover {
+  opacity: 1;
+  color: green;
+  cursor: pointer;
+}

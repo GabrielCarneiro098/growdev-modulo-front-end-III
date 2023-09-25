@@ -8,6 +8,8 @@ var prevPage;
 var nextPage;
 
 axios.get(API + "character").then(function (response) {
+  const totalCharacters = document.querySelector("#totalCharacters");
+  totalCharacters.innerHTML += `<span> ${response.data.info.count}</span>`;
   nextPage = response.data.info.next;
   apiCharacters = response.data.results;
 
@@ -53,11 +55,21 @@ axios.get(API + "character").then(function (response) {
   });
 });
 
+axios.get(API + "location").then(function (response) {
+  const totalLocations = document.querySelector("#totalLocations");
+  totalLocations.innerHTML += `<span> ${response.data.info.count}</span>`;
+});
+
+axios.get(API + "episode").then(function (response) {
+  const totalEpisodes = document.querySelector("#totalEpisodes");
+  totalEpisodes.innerHTML += `<span> ${response.data.info.count}</span>`;
+});
+
 prevBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
     characters.innerHTML = `<div
       style="
-        height: 400px;
+        height: 75vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -125,7 +137,7 @@ nextBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
     characters.innerHTML = `<div
     style="
-      height: 400px;
+      height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;

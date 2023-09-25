@@ -24,87 +24,65 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container-fluid">
-      <header>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img
-                class="mt-2"
-                id="logo"
-                src="./IMGs_Projeto/RICK_MORTY_ICON-01.svg"
-                alt=""
-              />
-            </div>
-            <div class="col-12 text-center my-5">
-              <h1 class="fw-bold text-success">API de Rick and Morty</h1>
-              <input
-                class="col-8"
-                id="searchBar"
-                placeholder="Search"
-                type="text"
-              />
-            </div>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img
+              class="mt-2"
+              id="logo"
+              src="./IMGs_Projeto/RICK_MORTY_ICON-01.svg"
+              alt=""
+            />
+          </div>
+          <div class="col-12 text-center my-5">
+            <h1 class="fw-bold text-success">API de Rick and Morty</h1>
+            <input
+              class="col-8"
+              id="searchBar"
+              placeholder="Search"
+              type="text"
+            />
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <div id="cardModal" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content bg-dark text-white">
-            <div class="modal-header">
-              <p id="modalName" class="modal-title text-success fw-bold fs-1">
-                Name
-              </p>
-              <button
-                type="button"
-                class="btn-close bg-light me-2"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body text-center">
-              <img
-                id="modalImage"
-                class="img-fluid rounded-5 shadow"
-                src="./IMGs_Projeto/RICK_MORTY_ICON.png"
-                alt=""
-              />
-              <p id="modalStatus" class="pt-3">Modal body text goes here.</p>
-              <div class="text-start">
-                <p id="modalGender" class="fs-4">Modal body text goes here.</p>
-                <p id="modalOrigin" class="fs-4">Modal body text goes here.</p>
-                <p id="modalLocation" class="fs-4">
-                  Modal body text goes here.
-                </p>
-              </div>
+    <div id="cardModal" class="modal fade" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header">
+            <p id="modalName" class="modal-title text-success fw-bold fs-1">
+              Name
+            </p>
+            <button
+              type="button"
+              class="btn-close bg-light me-2"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              id="modalImage"
+              class="img-fluid rounded-5 shadow"
+              src="./IMGs_Projeto/RICK_MORTY_ICON.png"
+              alt=""
+            />
+            <p id="modalStatus" class="pt-3">Modal body text goes here.</p>
+            <div class="text-start">
+              <p id="modalGender" class="fs-4">Modal body text goes here.</p>
+              <p id="modalOrigin" class="fs-4">Modal body text goes here.</p>
+              <p id="modalLocation" class="fs-4">Modal body text goes here.</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <main class="container-fluid">
-        <div class="container">
-          <div class="row d-flex justify-content-center gap-5 mb-5">
-            <button
-              type="button"
-              class="prev btn btn-success col-3 col-md-2 col-lg-1"
-            >
-              Prev</button
-            ><button
-              type="button"
-              class="next btn btn-success col-3 col-md-2 col-lg-1"
-            >
-              Next
-            </button>
-          </div>
-
-          <div
-            id="characters"
-            class="row gap-5 justify-center d-flex justify-content-center"
-          ></div>
-        </div>
-        <div class="row d-flex justify-content-center gap-5 my-5">
+    <main class="container-fluid">
+      <div class="container">
+        <div class="row d-flex justify-content-center gap-5 mb-5">
           <button
             type="button"
             class="prev btn btn-success col-3 col-md-2 col-lg-1"
@@ -117,8 +95,43 @@
             Next
           </button>
         </div>
-      </main>
-    </div>
+
+        <div
+          id="characters"
+          class="row gap-5 justify-center d-flex justify-content-center"
+        ></div>
+      </div>
+      <div class="row d-flex justify-content-center gap-5 my-5">
+        <button
+          type="button"
+          class="prev btn btn-success col-3 col-md-2 col-lg-1"
+        >
+          Prev</button
+        ><button
+          type="button"
+          class="next btn btn-success col-3 col-md-2 col-lg-1"
+        >
+          Next
+        </button>
+      </div>
+    </main>
+
+    <footer class="text-center bg-dark text-white p-5">
+      <div class="row">
+        <p id="totalCharacters" class="fs-5 col">Personagens:</p>
+        <p id="totalLocations" class="fs-5 col">Localizações:</p>
+        <p id="totalEpisodes" class="fs-5 col">Episódios:</p>
+        <p class="fs-5 col-12 mt-5">
+          Desenvolvido por:
+          <span
+            ><a target="_blank" href="https://github.com/GabrielCarneiro098"
+              >Gabriel Carneiro Dev</a
+            ></span
+          >
+          em 2023
+        </p>
+      </div>
+    </footer>
 
     <script src="./index.js"></script>
   </body>
