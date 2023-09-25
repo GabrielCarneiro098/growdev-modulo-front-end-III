@@ -55,32 +55,43 @@ axios.get(API + "character").then(function (response) {
 
 prevBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
-    axios.get(prevPage).then(function (response) {
-      characters.innerHTML = `<div class="three-body">
-      <div class="three-body__dot"></div>
-      <div class="three-body__dot"></div>
-      <div class="three-body__dot"></div>
+    characters.innerHTML = `<div
+      style="
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div class="three-body">
+        <div class="three-body__dot"></div>
+        <div class="three-body__dot"></div>
+        <div class="three-body__dot"></div>
+      </div>
     </div>`;
-      prevPage = response.data.info.prev;
-      nextPage = response.data.info.next;
-      apiCharacters = response.data.results;
-      characters.innerHTML = "";
 
-      apiCharacters.forEach((character) => {
-        var status;
-        switch (character.status) {
-          case "Alive":
-            status = "🟢Alive";
-            break;
-          case "Dead":
-            status = "🔴Dead";
-            break;
+    setTimeout(() => {
+      axios.get(prevPage).then(function (response) {
+        prevPage = response.data.info.prev;
+        nextPage = response.data.info.next;
+        apiCharacters = response.data.results;
+        characters.innerHTML = "";
 
-          default:
-            status = "⚫Unknow";
-            break;
-        }
-        characters.innerHTML += `<article data-character-id=${character.id}
+        apiCharacters.forEach((character) => {
+          var status;
+          switch (character.status) {
+            case "Alive":
+              status = "🟢Alive";
+              break;
+            case "Dead":
+              status = "🔴Dead";
+              break;
+
+            default:
+              status = "⚫Unknow";
+              break;
+          }
+          characters.innerHTML += `<article data-character-id=${character.id} onclick="handleClick(this)"
         id="card"
         data-bs-toggle="modal"
         data-bs-target="#cardModal"
@@ -104,39 +115,51 @@ prevBtn.forEach((btn) => {
           <p>${character.location.name}</p>
         </aside>
       </article>`;
+        });
       });
-    });
+    }, 700);
   });
 });
 
 nextBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
-    characters.innerHTML = `<div class="three-body">
+    characters.innerHTML = `<div
+    style="
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    "
+  >
+    <div class="three-body">
       <div class="three-body__dot"></div>
       <div class="three-body__dot"></div>
       <div class="three-body__dot"></div>
-    </div>`;
-    axios.get(nextPage).then(function (response) {
-      prevPage = response.data.info.prev;
-      nextPage = response.data.info.next;
-      apiCharacters = response.data.results;
-      characters.innerHTML = "";
+    </div>
+  </div>`;
 
-      apiCharacters.forEach((character) => {
-        var status;
-        switch (character.status) {
-          case "Alive":
-            status = "🟢Alive";
-            break;
-          case "Dead":
-            status = "🔴Dead";
-            break;
+    setTimeout(() => {
+      axios.get(nextPage).then(function (response) {
+        prevPage = response.data.info.prev;
+        nextPage = response.data.info.next;
+        apiCharacters = response.data.results;
+        characters.innerHTML = "";
 
-          default:
-            status = "⚫Unknow";
-            break;
-        }
-        characters.innerHTML += `<article data-character-id=${character.id} onclick="handleClick(this)"
+        apiCharacters.forEach((character) => {
+          var status;
+          switch (character.status) {
+            case "Alive":
+              status = "🟢Alive";
+              break;
+            case "Dead":
+              status = "🔴Dead";
+              break;
+
+            default:
+              status = "⚫Unknow";
+              break;
+          }
+          characters.innerHTML += `<article data-character-id=${character.id} onclick="handleClick(this)"
         id="card"
         data-bs-toggle="modal"
         data-bs-target="#cardModal"
@@ -160,8 +183,9 @@ nextBtn.forEach((btn) => {
           <p>${character.location.name}</p>
         </aside>
       </article>`;
+        });
       });
-    });
+    }, 800);
   });
 });
 
