@@ -30,11 +30,11 @@ axios.get(API + "character").then(function (response) {
     id="card"
     data-bs-toggle="modal"
     data-bs-target="#cardModal"
-    class="col-6 col-md-4 col-xl-2 p-2 my-card rounded-5 shadow"
+    class="col-6 col-md-4 col-xl-2 p-2 my-card rounded shadow"
   >
     <figure>
       <img
-        class="img-fluid rounded-5 shadow"
+        class="img-fluid rounded shadow"
         src=${character.image}
         alt=""
       />
