@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick & Morty API</title>
+    <link
+      rel="shortcut icon"
+      href="./IMGs_Projeto/RICK_MORTY_ICON-01.svg"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <img
+                class="mt-2"
+                id="logo"
+                src="./IMGs_Projeto/RICK_MORTY_ICON-01.svg"
+                alt=""
+              />
+            </div>
+            <div class="col-12 text-center my-5">
+              <h1 class="fw-bold text-success">API de Rick and Morty</h1>
+              <input
+                class="col-8"
+                id="searchBar"
+                placeholder="Search"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="cardModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+              <p id="modalName" class="modal-title text-success fw-bold fs-1">
+                Name
+              </p>
+              <button
+                type="button"
+                class="btn-close bg-light me-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img
+                id="modalImage"
+                class="img-fluid rounded-5 shadow"
+                src="./IMGs_Projeto/RICK_MORTY_ICON.png"
+                alt=""
+              />
+              <p id="modalStatus" class="pt-3">Modal body text goes here.</p>
+              <div class="text-start">
+                <p id="modalGender" class="fs-4">Modal body text goes here.</p>
+                <p id="modalOrigin" class="fs-4">Modal body text goes here.</p>
+                <p id="modalLocation" class="fs-4">
+                  Modal body text goes here.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="container-fluid">
+        <div class="container">
+          <div class="row d-flex justify-content-center gap-5 mb-5">
+            <button
+              type="button"
+              class="prev btn btn-success col-3 col-md-2 col-lg-1"
+            >
+              Prev</button
+            ><button
+              type="button"
+              class="next btn btn-success col-3 col-md-2 col-lg-1"
+            >
+              Next
+            </button>
+          </div>
+
+          <div
+            id="characters"
+            class="row gap-5 justify-center d-flex justify-content-center"
+          ></div>
+        </div>
+        <div class="row d-flex justify-content-center gap-5 my-5">
+          <button
+            type="button"
+            class="prev btn btn-success col-3 col-md-2 col-lg-1"
+          >
+            Prev</button
+          ><button
+            type="button"
+            class="next btn btn-success col-3 col-md-2 col-lg-1"
+          >
+            Next
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
