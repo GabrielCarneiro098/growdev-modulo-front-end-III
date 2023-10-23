@@ -10,6 +10,10 @@
   outline: none;
 }
 
+header a {
+  text-decoration: none;
+}
+
 .my-card {
   background-color: #e4dfdf;
   transition: ease-in-out 0.5s;
@@ -17,6 +21,7 @@
 
 .my-card:hover {
   transform: scale(1.1);
+  cursor: pointer;
   transition: ease-in-out 0.2s;
 }
 
@@ -139,4 +144,26 @@ footer a:hover {
   opacity: 1;
   color: green;
   cursor: pointer;
+}
+
+.hideBtn {
+  display: none;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

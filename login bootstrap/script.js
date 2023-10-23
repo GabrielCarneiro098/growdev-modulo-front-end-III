@@ -1,6 +1,20 @@
-import * as Popper from "@popperjs/core";
+submit = document.querySelector("button");
 
-email = document.querySelector("#inputEmail");
-password = document.querySelector("#inputPassword");
+submit.addEventListener("click", function (e) {
+  e.preventDefault();
+  const email = document.querySelector("#inputEmail").value;
+  const senha = document.querySelector("#inputPassword").value;
 
-console.log(email, password);
+  const user = {
+    email: email,
+    senha: senha,
+  };
+
+  axios
+    .get("https://api-recados-nk2h.onrender.com/login", { params: user })
+    .then(function (response) {
+      console.log(response);
+    });
+
+  console.log(user);
+});
