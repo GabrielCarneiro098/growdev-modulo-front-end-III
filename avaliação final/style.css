@@ -10,8 +10,8 @@
   outline: none;
 }
 
-header a {
-  text-decoration: none;
+header #logo {
+  cursor: pointer;
 }
 
 .my-card {

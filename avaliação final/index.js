@@ -133,17 +133,14 @@ function searchCharacter() {
         }, 1500);
       })
       .catch(function (error) {
-        var randomNumber = Math.random() * 10;
-        console.log(randomNumber.toFixed(0));
-        console.log(error.response.data.error);
+        var randomNumber = (Math.random() * 10).toFixed(0);
+        console.log(randomNumber);
         setTimeout(() => {
           characters.innerHTML = `
         <div id="card" class="container">
         <div class="row g-0">
           <div class="col-12 col-md-5 order-2 order-sm-1">
-            <img src="./IMGs_Projeto/error/error${randomNumber.toFixed(
-              0
-            )}.png" class="img-fluid rounded-start" alt="...">
+            <img src="./IMGs_Projeto/error/error${randomNumber}.png" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-12 col-md-5 align-self-center text-center order-1 order-sm-2">
               <h5 class="card-title text-danger fs-1 mb-5 fw-bold">⚠ERROR!!!</h5>
@@ -162,7 +159,6 @@ function searchCharacter() {
             btn.classList.add("hideBtn");
           });
           opacityAnimation();
-          s;
         }, 1000);
       });
   }
