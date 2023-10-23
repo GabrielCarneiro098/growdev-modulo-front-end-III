@@ -18,38 +18,65 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar bg-primary fixed-top" data-bs-theme="dark">
+    <style>
+      .recado {
+        background-color: rgb(66, 104, 173);
+
+        color: white;
+        gap: 5px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+
+    <nav class="navbar bg-primary" data-bs-theme="dark">
       <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">Navbar</span>
       </div>
     </nav>
-
-    <div class="position-absolute top-50 start-50 translate-middle">
-      <div class="mb-3">
-        <label for="inputEmail1" class="form-label">Email</label>
-        <input
-          required
-          type="email"
-          class="form-control"
-          id="inputEmail"
-          aria-describedby="emailHelp"
-        />
-        <div id="emailHelp" class="form-text">
-          Nunca iremos compartilhar seu email.
+    <div
+      style="
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+      "
+      id="outPut"
+    >
+      <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="mb-3">
+          <label for="inputEmail1" class="form-label">Email</label>
+          <input
+            required
+            type="email"
+            class="form-control"
+            id="inputEmail"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            Nunca iremos compartilhar seu email.
+          </div>
         </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label">Senha</label>
+          <input
+            required
+            type="password"
+            class="form-control"
+            id="inputPassword"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
       </div>
-      <div class="mb-3">
-        <label for="inputPassword" class="form-label">Senha</label>
-        <input
-          required
-          type="password"
-          class="form-control"
-          id="inputPassword"
-        />
-      </div>
-      <button type="submit" class="btn btn-primary">Cadastre-se</button>
     </div>
-
+    
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
